@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2026 at 09:37 AM
+-- Generation Time: Jan 21, 2026 at 07:51 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -19,7 +19,6 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `student_system`
--- Author: Misokalya Kimiti / DB-KIITEC
 --
 
 -- --------------------------------------------------------
@@ -72,7 +71,10 @@ INSERT INTO `students` (`id`, `user_id`, `first_name`, `last_name`, `gender`, `c
 (3, 4, 'Sumaiya', 'Muyabhi', 'Female', 3, '123456', '2010-07-28', '2026-01-19 13:02:02', '1768827722_default.jpg'),
 (4, 5, 'Arnold', 'Benjamin', 'Male', 2, '543210', '2002-01-01', '2026-01-19 13:03:43', '1768827823_default.jpg'),
 (5, 6, 'Rodgers', 'Eustaki', 'Male', 4, '987654', '2002-01-02', '2026-01-19 13:04:50', '1768827890_default.jpg'),
-(6, 7, 'Junior', 'Peter', 'Male', 3, '010101', '2004-02-01', '2026-01-19 13:05:40', '1768827940_default.jpg');
+(6, 7, 'Junior', 'Peter', 'Male', 3, '010101', '2004-02-01', '2026-01-19 13:05:40', '1768827940_default.jpg'),
+(8, 9, 'Jovline', 'Epimark', 'Female', 1, '112233', '2003-10-08', '2026-01-21 06:14:33', '1768976325_download (7).jpg'),
+(9, 10, 'Mohamed', 'Juma', 'Male', 1, '332211', '2000-01-01', '2026-01-21 06:21:14', '1768976474_images (4).jfif'),
+(10, 11, 'Maurus', 'moyo', 'Male', 1, '666666', '2010-12-20', '2026-01-21 06:26:48', '1768976808_KINGWENDU.jpg');
 
 -- --------------------------------------------------------
 
@@ -95,10 +97,13 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
 (1, 'admin', '$2y$10$1OFI.YL8xOZNhtDhRw9GOuYSTTDI72fAMdwfC9hPMx.EBC2IprKbW', 'admin'),
 (2, '123456789', '$2y$10$FKC.h8zTsheJ/uzUl2bu8OxuO7wFsJiVKn3bixcndxrPpsylIQPKm', 'student'),
 (3, '012345678', '$2y$10$3rG7R.nfs8ItgoIOABhH/.FPR/enyg7WOPlNn6iWbl5lbEMHk0e5G', 'student'),
-(4, '123456', '$2y$10$QFbaPOJYXLwOtaza1cL4nuZN8SzmZ7RspHKw.K7tJZ6biO0LzpO.2', 'student'),
+(4, '123456', '$2y$10$MBu7xZLuAaqFssqL.J4R9e4p3PdNehCylJgC7KovFp72t3p9ZP51.', 'student'),
 (5, '543210', '$2y$10$NgTLCGd9YM7j/LMdZOQGyOGrK8d9XuctiHqjAsMAif4wUXpRAiZ2u', 'student'),
 (6, '987654', '$2y$10$vtNjalIa8ZJ9KJM7J3YcDe0WliQIjY05.QewHcET/2pWZzKGB.rNm', 'student'),
-(7, '010101', '$2y$10$lOOd.1BIyYknBqqWe2SffelUkzJmaxr98wp0E32B9ZW3EH/k81g5y', 'student');
+(7, '010101', '$2y$10$lOOd.1BIyYknBqqWe2SffelUkzJmaxr98wp0E32B9ZW3EH/k81g5y', 'student'),
+(9, '112233', '$2y$10$xVSXi9Q89td53PvexuWdgOHEmK4fiq7irMMLrRSbwpXamWj5zJDWm', 'student'),
+(10, '332211', '$2y$10$5vcrS.S8tEbqN2fjmuN11OlsYOviQjQImgHtl6.6LWlgRtOGqyuvu', 'student'),
+(11, '666666', '$2y$10$ILq9dgn3bOq/YlU1JdufoOGHAGEzceQEoUdIBCAuHeEr.kM7IWjPK', 'student');
 
 --
 -- Indexes for dumped tables
@@ -140,13 +145,13 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

@@ -76,100 +76,122 @@ if (isset($_POST['save'])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Add Student</title>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
 
-<link rel="stylesheet" href="../assets/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-.form-box {
-    max-width: 600px;
-    background: #fff;
-    padding: 30px;
-    margin: 40px auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.1);
-}
-.form-box h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.form-box input, .form-box select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-.form-box button {
-    width: 100%;
-    padding: 12px;
-    background: #4e54c8;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.success {
-    background: #e6ffed;
-    color: #046c4e;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    text-align: center;
-}
-.error {
-    background: #ffe5e5;
-    color: #c00;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    text-align: center;
-}
-</style>
+    <style>
+        .form-box {
+            max-width: 600px;
+            background: #fff;
+            padding: 30px;
+            margin: 40px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-box input,
+        .form-box select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .form-box button {
+            width: 100%;
+            padding: 12px;
+            background: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .success {
+            background: #e6ffed;
+            color: #046c4e;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .error {
+            background: #ffe5e5;
+            color: #c00;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .back a {
+            text-decoration: none;
+            color: #4e54c8;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="form-box">
-    <h2><i class="fa fa-user-plus"></i> Add Student</h2>
+    <div class="form-box">
+        <h2><i class="fa fa-user-plus"></i> Add Student</h2>
 
-    <?php if ($success): ?><div class="success"><?= $success ?></div><?php endif; ?>
-    <?php if ($error): ?><div class="error"><?= $error ?></div><?php endif; ?>
+        <?php if ($success): ?><div class="success"><?= $success ?></div><?php endif; ?>
+        <?php if ($error): ?><div class="error"><?= $error ?></div><?php endif; ?>
 
-    <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
 
-        <input type="text" name="fname" placeholder="First Name" required>
-        <input type="text" name="lname" placeholder="Last Name" required>
+            <input type="text" name="fname" placeholder="First Name" required>
+            <input type="text" name="lname" placeholder="Last Name" required>
 
-        <select name="gender" required>
-            <option value="">Select Gender</option>
-            <option>Male</option>
-            <option>Female</option>
-        </select>
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
 
-        <select name="course" required>
-            <option value="">Select Course</option>
-            <?php foreach ($courses as $c): ?>
-                <option value="<?= $c['id'] ?>">
-                    <?= htmlspecialchars($c['course_name']) ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
+            <select name="course" required>
+                <option value="">Select Course</option>
+                <?php foreach ($courses as $c): ?>
+                    <option value="<?= $c['id'] ?>">
+                        <?= htmlspecialchars($c['course_name']) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
 
-        <input type="text" name="reg_no" placeholder="Registration Number" required>
-        <input type="date" name="dob" required>
+            <input type="text" name="reg_no" placeholder="Registration Number" required>
+            <input type="date" name="dob" required>
 
-        <input type="file" name="photo" accept="image/*">
+            <input type="file" name="photo" accept="image/*">
 
-        <button type="submit" name="save">
-            <i class="fa fa-save"></i> Save Student
-        </button>
-    </form>
-</div>
-<div align="center"><a href="dashboard.php">< Admin Dashboard</a></div>
+            <button type="submit" name="save">
+                <i class="fa fa-save"></i> Save Student
+            </button>
+        </form>
+    </div>
+    <div class="back">
+        <a href="dashboard.php">
+            <i class="fa fa-arrow-left"></i> Back to Dashboard
+        </a>
+    </div>
 
 </body>
+
 </html>
